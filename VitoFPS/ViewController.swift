@@ -13,16 +13,15 @@ class DemoViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let navigationView = navigationController?.view else {
-            return
-        }
-        let label = VitoFPSLabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        navigationView.addSubview(label)
-        label.topAnchor.constraint(equalTo: navigationView.topAnchor, constant: 20).isActive = true
-        label.centerXAnchor.constraint(equalTo: navigationView.centerXAnchor).isActive = true
-        
+
+    }
+    
+    @IBAction func hiddenFPSWindow(sender: UIButton) {
+         VitoFPSManager.shared.hidden()
+    }
+    
+    @IBAction func showFPSWindow(sender: UIButton) {
+        VitoFPSManager.shared.show()
     }
     
     // MARK: -UITableViewData Source
@@ -34,7 +33,6 @@ class DemoViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: DemoCell.cellIdentifier) as! DemoCell
-        
         return cell
     }
 
@@ -42,5 +40,4 @@ class DemoViewController: UITableViewController {
 
 class DemoCell: UITableViewCell {
     static let cellIdentifier = "DemoCell"
-    
 }

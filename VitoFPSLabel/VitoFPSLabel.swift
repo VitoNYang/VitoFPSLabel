@@ -14,6 +14,11 @@ open class VitoFPSLabel: UILabel {
     var count = 0
     var lastTime: CFTimeInterval = 0
     
+    var topAndBottomPadding: CGFloat = 0
+    var leftAndRightPadding: CGFloat = 10
+    
+    public weak var fpsDelegate: VitoFPSLabelDelegate?
+    
     override public init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -36,7 +41,8 @@ open class VitoFPSLabel: UILabel {
         layer.cornerRadius = 5
         layer.masksToBounds = true
         textAlignment = .center
-        text = "60 FPS"
+        text = "";
+        isHidden = true
     }
     
     /*
@@ -64,19 +70,28 @@ open class VitoFPSLabel: UILabel {
         lastTime = currentTimestamp
         
         self.text = String(format: "%.2f FPS", fps)
+        if isHidden {
+            isHidden = false
+        }
+        
         invalidateIntrinsicContentSize()
     }
     
     override open var intrinsicContentSize: CGSize {
         let size = super.intrinsicContentSize
-        
-        return CGSize(width: size.width + 16, height: size.height + 10)
+        let newSize = CGSize(width: size.width + leftAndRightPadding, height: size.height + topAndBottomPadding)
+        fpsDelegate?.sizeDidChange(newSize: newSize)
+        return newSize
     }
     
     private func stopTicking() {
         displayLink?.invalidate()
         displayLink = nil
     }
+}
+
+public protocol VitoFPSLabelDelegate : NSObjectProtocol{
+    func sizeDidChange(newSize: CGSize)
 }
 
 class VitoFPSProxy {

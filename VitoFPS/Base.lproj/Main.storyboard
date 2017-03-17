@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -92,11 +93,74 @@
                             <outlet property="delegate" destination="12o-wF-0EZ" id="3MY-t6-CQj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="i4t-Rs-Krm"/>
+                    <navigationItem key="navigationItem" id="i4t-Rs-Krm">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="yl6-oc-3TB">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dL4-Bp-30j">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show"/>
+                                <connections>
+                                    <action selector="showFPSWindowWithSender:" destination="12o-wF-0EZ" eventType="touchUpInside" id="uzc-xv-B6H"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="qu5-Oa-feM">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZKO-KG-RIH">
+                                    <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="NextVC"/>
+                                    <connections>
+                                        <segue destination="GMh-yG-yFa" kind="show" id="NiW-PS-tAj"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="mrJ-Dm-may">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fYs-2L-9FM">
+                                    <rect key="frame" x="185" y="7" width="83" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Hidden"/>
+                                    <connections>
+                                        <action selector="hiddenFPSWindowWithSender:" destination="12o-wF-0EZ" eventType="touchUpInside" id="u7e-8V-Wwh"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UmK-pc-LTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1938" y="-689"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rkE-NK-2Oz">
+            <objects>
+                <viewController id="GMh-yG-yFa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kVj-ve-sWi"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Fe-QE-kai"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zSj-SN-Xgb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdT-uh-RgB">
+                                <rect key="frame" x="111.5" y="318.5" width="152.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AdT-uh-RgB" firstAttribute="centerY" secondItem="zSj-SN-Xgb" secondAttribute="centerY" id="HLa-0q-qIY"/>
+                            <constraint firstItem="AdT-uh-RgB" firstAttribute="centerX" secondItem="zSj-SN-Xgb" secondAttribute="centerX" id="mXN-8O-qtk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E4m-4k-z1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2724" y="-690"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YXO-74-zJu">

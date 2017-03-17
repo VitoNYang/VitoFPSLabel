@@ -16,6 +16,7 @@
 		3F58F3401E76ECDE0031B2F0 /* VitoFPSLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F58F3391E76ECDE0031B2F0 /* VitoFPSLabel.framework */; };
 		3F58F3411E76ECDE0031B2F0 /* VitoFPSLabel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F58F3391E76ECDE0031B2F0 /* VitoFPSLabel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F58F3471E76ECFA0031B2F0 /* VitoFPSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F58F3461E76ECFA0031B2F0 /* VitoFPSLabel.swift */; };
+		3FA51B311E7BCB38007C43CD /* VitoFPSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA51B301E7BCB38007C43CD /* VitoFPSManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		3F58F33B1E76ECDE0031B2F0 /* VitoFPSLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VitoFPSLabel.h; sourceTree = "<group>"; };
 		3F58F33C1E76ECDE0031B2F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F58F3461E76ECFA0031B2F0 /* VitoFPSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitoFPSLabel.swift; sourceTree = "<group>"; };
+		3FA51B301E7BCB38007C43CD /* VitoFPSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitoFPSManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				3F58F33B1E76ECDE0031B2F0 /* VitoFPSLabel.h */,
 				3F58F33C1E76ECDE0031B2F0 /* Info.plist */,
 				3F58F3461E76ECFA0031B2F0 /* VitoFPSLabel.swift */,
+				3FA51B301E7BCB38007C43CD /* VitoFPSManager.swift */,
 			);
 			path = VitoFPSLabel;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F58F3471E76ECFA0031B2F0 /* VitoFPSLabel.swift in Sources */,
+				3FA51B311E7BCB38007C43CD /* VitoFPSManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
