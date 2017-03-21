@@ -13,7 +13,6 @@ class DemoViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func hiddenFPSWindow(sender: UIButton) {

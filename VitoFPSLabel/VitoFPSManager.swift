@@ -19,7 +19,7 @@ open class VitoFPSManager: NSObject {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func orientationDidChange(notification: NSNotification) {
+    func orientationDidChange(notification: Notification) {
         var fpsFrame = self.fpsWindow.frame
         check(frame: &fpsFrame)
         self.fpsWindow.frame = fpsFrame
@@ -76,11 +76,13 @@ open class VitoFPSManager: NSObject {
     /// 调用这个方法来显示 VitoFPSLabel
     public func show() {
         fpsWindow.isHidden = false
+        fpsLabel.isTracking = true
     }
     
     /// 调用这个方法来隐藏 VitoFPSLabel
     public func hidden() {
         fpsWindow.isHidden = true
+        fpsLabel.isTracking = false
     }
     
     func panHandle(panGesture: UIPanGestureRecognizer) {
