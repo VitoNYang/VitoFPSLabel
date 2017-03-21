@@ -24,6 +24,10 @@ class DemoViewController: UITableViewController {
         VitoFPSManager.shared.show()
     }
     
+    @IBAction func toggleDragAction(_ sender: UIButton) {
+        VitoFPSManager.shared.needDrag = !VitoFPSManager.shared.needDrag
+    }
+    
     // MARK: -UITableViewData Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -33,6 +37,7 @@ class DemoViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: DemoCell.cellIdentifier) as! DemoCell
+
         return cell
     }
 

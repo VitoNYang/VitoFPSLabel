@@ -10,12 +10,12 @@ import UIKit
 
 open class VitoFPSLabel: UILabel {
     
-    var displayLink: CADisplayLink?
-    var count = 0
-    var lastTime: CFTimeInterval = 0
+    private var displayLink: CADisplayLink?
+    private var count = 0
+    private var lastTime: CFTimeInterval = 0
     
-    var topAndBottomPadding: CGFloat = 0
-    var leftAndRightPadding: CGFloat = 10
+    public var topAndBottomPadding: CGFloat = 0
+    public var leftAndRightPadding: CGFloat = 10
     
     public weak var fpsDelegate: VitoFPSLabelDelegate?
     
@@ -91,9 +91,13 @@ open class VitoFPSLabel: UILabel {
 }
 
 public protocol VitoFPSLabelDelegate : NSObjectProtocol{
+    /// 用来监听 VitoFPSLabel size 的变化
     func sizeDidChange(newSize: CGSize)
 }
 
+/*
+ 用来防止循环引用
+ */
 class VitoFPSProxy {
     weak var target: VitoFPSLabel?
     init(target: VitoFPSLabel) {
