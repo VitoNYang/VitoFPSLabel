@@ -1,6 +1,6 @@
 # VitoFPSLabel
 
-VitoFPSLabel 是一个继承自 UILabel 的 view , 它实现了自动检测 FPS 的功能, 所以我们可以很方便的使用 VitoFPSLabel 来查看当前的 FPS 值。
+VitoFPSLabel 是一个继承自 UILabel 的 view , 它实现了自动检测 FPS 的功能, 所以我们可以很方便的使用 VitoFPSLabel 来查看当前的 FPS 值, 并且你可以拖动它到任意位置😆😆
 
 VitoFPSLabel 是使用了 Swfit 3 写的。
 

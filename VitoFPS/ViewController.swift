@@ -13,7 +13,6 @@ class DemoViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func hiddenFPSWindow(sender: UIButton) {
@@ -22,6 +21,10 @@ class DemoViewController: UITableViewController {
     
     @IBAction func showFPSWindow(sender: UIButton) {
         VitoFPSManager.shared.show()
+    }
+    
+    @IBAction func toggleDragAction(_ sender: UIButton) {
+        VitoFPSManager.shared.needDrag = !VitoFPSManager.shared.needDrag
     }
     
     // MARK: -UITableViewData Source
@@ -33,6 +36,7 @@ class DemoViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: DemoCell.cellIdentifier) as! DemoCell
+
         return cell
     }
 
