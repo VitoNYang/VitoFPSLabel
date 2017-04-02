@@ -1,4 +1,13 @@
 language: objective-c
-osx_image: xcode8
-xcode_project: VitoFPS.xcodeproj 
-xcode_scheme: VitoFPS
+
+osx_image: xcode8.3
+
+env:
+  global:
+    - XCPROJECT="VitoFPS.xcodeproj"
+    - SCHEME="VitoFPS"
+  matrix:
+    - DESTINATION="platform=iOS Simulator,name=iPhone 7" SDK="iphonesimulator" ACTION="test"
+
+script:
+  - xcodebuild -project "$XCPROJECT" -scheme "$SCHEME" -destination "$DESTINATION" -sdk $SDK $ACTION
