@@ -7,7 +7,7 @@ env:
     - XCPROJECT="VitoFPS.xcodeproj"
     - SCHEME="VitoFPS"
   matrix:
-    - DESTINATION="platform=iOS Simulator,name=iPhone 7" SDK="iphonesimulator" ACTION="test"
+    - DESTINATION="platform=iOS Simulator,name=iPhone 7" SDK="iphonesimulator" ACTION="build"
 
 script:
   - xcodebuild -project "$XCPROJECT" -scheme "$SCHEME" -destination "$DESTINATION" -sdk $SDK $ACTION
