@@ -12,14 +12,14 @@ open class VitoFPSManager: NSObject {
     public static let shared = VitoFPSManager()
     private override init() {
         super.init()
-        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange(notification:)), name: .UIApplicationDidChangeStatusBarFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange(notification:)), name: UIApplication.didChangeStatusBarFrameNotification, object: nil)
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func orientationDidChange(notification: Notification) {
+    @objc func orientationDidChange(notification: Notification) {
         var fpsFrame = self.fpsWindow.frame
         check(frame: &fpsFrame)
         self.fpsWindow.frame = fpsFrame
@@ -46,7 +46,7 @@ open class VitoFPSManager: NSObject {
     
     fileprivate lazy var fpsWindow: UIWindow = {
         let window = UIWindow()
-        window.windowLevel = UIWindowLevelStatusBar + 1
+        window.windowLevel = UIWindow.Level.statusBar + 1
         window.backgroundColor = .clear
         window.addSubview(self.fpsLabel)
         
@@ -85,7 +85,7 @@ open class VitoFPSManager: NSObject {
         fpsLabel.isTracking = false
     }
     
-    func panHandle(panGesture: UIPanGestureRecognizer) {
+    @objc func panHandle(panGesture: UIPanGestureRecognizer) {
         let position = panGesture.translation(in: panGesture.view)
         panGesture.setTranslation(.zero, in: panGesture.view)
         var fpsFrame = fpsWindow.frame

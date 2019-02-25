@@ -1,11 +1,12 @@
 Pod::Spec.new do |s|
 
 s.name         = "VitoFPSTrack"
-s.version      = "0.1"
+s.version      = "0.2"
 s.summary      = "A FPS Tracking Library"
 
 s.description  = <<-DESC
 A FPS Tracking Library, you can use it everywhere 🌈
+update to swift4.2
 DESC
 
 s.homepage     = "https://github.com/VitoNYang/VitoFPSLabel"

@@ -42,10 +42,10 @@ open class VitoFPSLabel: UILabel {
     }
     
     private func commonInit() {
-        NotificationCenter.default.addObserver(self, selector: #selector(handleEnterBackground(notification:)), name: .UIApplicationDidEnterBackground, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleBecomeActive(notification:)), name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleEnterBackground(notification:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleBecomeActive(notification:)), name: UIApplication.didBecomeActiveNotification, object: nil)
         displayLink = CADisplayLink(target: VitoFPSProxy(target: self), selector: #selector(VitoFPSProxy.callback(displayLink:)))
-        displayLink?.add(to: .main, forMode: .commonModes)
+        displayLink?.add(to: .current, forMode: RunLoop.Mode.common)
         
         backgroundColor = UIColor.gray.withAlphaComponent(0.6)
         layer.cornerRadius = 5
